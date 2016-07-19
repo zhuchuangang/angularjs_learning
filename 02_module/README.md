@@ -4,9 +4,9 @@
 - 模块是应用控制器的容器。
 - 控制器通常属于一个模块。
 
-> （AngularJS模块Module）定义了AngularJS 应用。
-> AngularJS 控制器（Controller）用于控制 AngularJS 应用。
-> ng-app指令定义了应用, ng-controller 定义了控制器。
+> *AngularJS模块Module）定义了AngularJS 应用。
+> *AngularJS 控制器（Controller）用于控制 AngularJS 应用。
+> *ng-app指令定义了应用, ng-controller 定义了控制器。
 
 ```
 <!doctype html>
