@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <title>hello world</title>
-    <script src="//cdn.bootcss.com/angular.js/1.5.7/angular.min.js"></script>
+    <script src="https://cdn.bootcss.com/angular.js/1.5.7/angular.min.js"></script>
 </head>
 <body>
     Your name:<input ng-model="name" type="text" placeholder="input your name..."/>
@@ -28,7 +28,7 @@
 <head>
     <meta charset="UTF-8">
     <title>best practices</title>
-    <script src="//cdn.bootcss.com/angular.js/1.2.29/angular.min.js"></script>
+    <script src="https://cdn.bootcss.com/angular.js/1.2.29/angular.min.js"></script>
 </head>
 <body ng-app>
     <div ng-controller="MyController">
