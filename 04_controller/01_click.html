@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>root scope</title>
+</head>
+<body>
+<div ng-app="myApp">
+    <div ng-controller="myController">
+        <button ng-click="add(1)">add</button>
+        <button ng-click="subtract(1)">subtract</button>
+        count:<input type="text" value="{{count}}"/>
+    </div>
+</div>
+<script src="https://cdn.bootcss.com/angular.js/1.2.29/angular.min.js"></script>
+<script type="text/javascript">
+    var app = angular.module("myApp",[]);
+    app.controller("myController",function($scope){
+        $scope.count=0;
+        $scope.add=function(value){
+            $scope.count+=value;
+        }
+        $scope.subtract=function(value){
+            $scope.count-=value;
+        }
+    });
+</script>
+</body>
+</html>

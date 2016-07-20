@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>scope</title>
+</head>
+<body>
+<div ng-app="myApp">
+    <div ng-controller="myController">
+        Hello {{name}}!
+    </div>
+</div>
+<script src="https://cdn.bootcss.com/angular.js/1.2.29/angular.min.js"></script>
+<script type="text/javascript">
+    var app = angular.module("myApp",[]);
+    app.controller("myController",function($scope){
+        $scope.name='World';
+    });
+</script>
+</body>
+</html>
