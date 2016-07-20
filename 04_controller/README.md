@@ -4,7 +4,7 @@ AngularJS中的控制器是一个函数,用来向视图的作用域中添加额�
 
 当我们在页面上创建一个新的控制器时,AngularJS会生成并传递一个新的$scope给这个控制器。可以在这个控制器里初始化$scope。由于AngularJS会负责处理控制器的实例化过程,我们只需编写构造函数即可。
 
-- 控制器初始化:
+## 控制器初始化
 ```
      function FirstController($scope) {
        $scope.message = "hello";
@@ -13,7 +13,7 @@ AngularJS中的控制器是一个函数,用来向视图的作用域中添加额�
 
 > 上面是在全局作用域中创建的FirstController这个函数,会污染全局命名空间。
 
-- 更合理的是在模块中创建控制器:
+## 更合理的是在模块中创建控制器
 ```
  var app = angular.module('app', []);
      app.controller('FirstController', function($scope) {
@@ -21,7 +21,8 @@ AngularJS中的控制器是一个函数,用来向视图的作用域中添加额�
      });
 ```
 
-- AngularJS允许我们在视图中像调用普通数据一样调用$scope上的函数
+## AngularJS允许我们在视图中像调用普通数据一样调用$scope上的函数
+
 ```
 <!DOCTYPE html>
 <html lang="en">
@@ -91,6 +92,7 @@ AngularJS在当前作用域中无法找到某个属性时,便会在父级作用�
 ```
 
 > 控制器应该尽可能保持短小精悍,而在控制器中不要进行DOM操作和数据操作,设计良好的应用会将复杂的逻辑放到指令和服务中,如同spring的三层结构。
+
 ```
 angular.module('myApp', []) .controller('MyController', function($scope,UserSrv) {
 // 内容可以被指令控制 $scope.onLogin = function(user) {
