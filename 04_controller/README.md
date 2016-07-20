@@ -1,10 +1,10 @@
-#控制器
+#4.控制器
 
 AngularJS中的控制器是一个函数,用来向视图的作用域中添加额外的功能。我们用它来给作用域对象设置初始状态.
 
 当我们在页面上创建一个新的控制器时,AngularJS会生成并传递一个新的$scope给这个控制器。可以在这个控制器里初始化$scope。由于AngularJS会负责处理控制器的实例化过程,我们只需编写构造函数即可。
 
-## 控制器初始化
+##4.1 控制器初始化
 ```
      function FirstController($scope) {
        $scope.message = "hello";
@@ -13,7 +13,7 @@ AngularJS中的控制器是一个函数,用来向视图的作用域中添加额�
 
 > 上面是在全局作用域中创建的FirstController这个函数,会污染全局命名空间。
 
-## 更合理的是在模块中创建控制器
+##4.2 更合理的是在模块中创建控制器
 ```
  var app = angular.module('app', []);
      app.controller('FirstController', function($scope) {
@@ -21,7 +21,7 @@ AngularJS中的控制器是一个函数,用来向视图的作用域中添加额�
      });
 ```
 
-## AngularJS允许我们在视图中像调用普通数据一样调用$scope上的函数
+##4.3 AngularJS允许我们在视图中像调用普通数据一样调用$scope上的函数
 
 ```
 <!DOCTYPE html>
@@ -56,7 +56,7 @@ AngularJS中的控制器是一个函数,用来向视图的作用域中添加额�
 ```
 > AngularJS同其他JavaScript框架最主要的一个区别就是,控制器并不适合用来执行DOM操作、格式化或数据操作,以及除存储数据模型之外的状态维护操作。它只是视图和$scope之间的桥梁。
 
-#控制器嵌套(作用域包含作用域)
+##4.4 控制器嵌套(作用域包含作用域)
 AngularJS在当前作用域中无法找到某个属性时,便会在父级作用域中进行查找。如果AngularJS找不到对应的属性,会顺着父级作用域一直向上寻找,直到抵达$rootScope为止。如果在$rootScope中也找不到,程序会继续运行,但视图无法更新。
 
 ```

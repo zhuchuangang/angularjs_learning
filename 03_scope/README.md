@@ -1,4 +1,4 @@
-#作用域
+#3.作用域
 
 > AngularJS启动并生成视图时,会将根ng-app元素同$rootScope进行绑定。$rootScope是所有$scope对象的最上层。
 
