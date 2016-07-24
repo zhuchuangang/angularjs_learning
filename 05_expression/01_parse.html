@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>parse</title>
+</head>
+<body ng-app="myApp">
+<div ng-controller="myController">
+    <input type="text" ng-model="expr" placeholder="please input expression..."/>
+    {{parseVal}}
+</div>
+<script src="https://cdn.bootcss.com/angular.js/1.2.29/angular.min.js"></script>
+<script type="text/javascript">
+    angular.module("myApp",[]).controller("myController",function($scope,$parse){
+        $scope.name='China';
+        //expr文本框输入的字符串是我们要解析的表达式
+        $scope.$watch('expr',function(newVal,oldVal,scope){
+            if(newVal!=oldVal){
+                //parseFunc是解析以后返回的函数
+                var parseFunc=$parse(newVal);
+                //设置解析表达的上下文环境为scpse,也可以指定
+                //例如expr='Hello'+name,上下文环境可以设置为context={name:'World'}
+                $scope.parseVal=parseFunc(scope);
+            }
+        });
+    });
+</script>
+</body>
+</html>
