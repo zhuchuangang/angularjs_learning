@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>filter:currency</title>
+</head>
+<body ng-app="myApp">
+<div ng-controller="myController">
+    {{money|currency}}<br/>
+    {{myMoney}}
+</div>
+<script src="https://cdn.bootcss.com/angular.js/1.2.29/angular.min.js"></script>
+<script type="text/javascript">
+    var app=angular.module("myApp",[]);
+    app.controller("myController",function($scope,$filter){
+        $scope.money=1;
+        $scope.myMoney=$filter("currency")(100);
+    });
+</script>
+</body>
+</html>
