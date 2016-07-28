@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>filter:filter</title>
+</head>
+<body ng-app="myApp">
+<div ng-controller="myController">
+    {{data}}
+</div>
+<script src="https://cdn.bootcss.com/angular.js/1.2.29/angular.min.js"></script>
+<script type="text/javascript">
+    var app=angular.module("myApp",[]);
+    app.controller("myController",function($scope,$filter){
+        var filter=$filter("filter");
+        var array=["a","b","c"];
+        $scope.data=filter(array,"a");
+    });
+</script>
+</body>
+</html>

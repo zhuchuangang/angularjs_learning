@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>filter:date</title>
+</head>
+<body ng-app="myApp">
+<div ng-controller="myController">
+    {{date|date:'yyyy-MM-dd hh:mm:ss.sss'}}<br/>
+    {{year}}
+</div>
+<script src="https://cdn.bootcss.com/angular.js/1.2.29/angular.min.js"></script>
+<script type="text/javascript">
+    var app=angular.module("myApp",[]);
+    app.controller("myController",function($scope,$filter){
+        $scope.date=new Date();
+        $scope.year=$filter("date")(new Date(),"yyyy");
+    });
+</script>
+</body>
+</html>
