@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>direct</title>
+</head>
+<body ng-app="myApp">
+<my-directive></my-directive>
+<script src="https://cdn.bootcss.com/angular.js/1.2.29/angular.min.js"></script>
+<script type="text/javascript">
+angular.module("myApp",[]).directive("myDirective",function(){
+    return {
+        restrict:'E',
+        template:'<a href="http://www.baidu.com">Click me to go to baidu</a>'
+    };
+});
+</script>
+</body>
+</html>
